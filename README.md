@@ -20,14 +20,27 @@ git config --global <配置名称> <配置的值>
 基本日常操作
 git status		查看状态
 git log --oneline --garph		一行 图表查看log
+git log --stat		显示每次提交修改过的文件
+git log --pretty=short		跟格式化输出 oneline medium,full,fuller,email 或raw
+git log --reverse 		升序时间展示log
+git log --pretty=format:'%h : %s' --topo-order --grap 	
+
+
 git add file1 file2 file3		可以提交多个文件
 git diff				查看工作区中没有add提交到暂存区的修改
 git diff --cached		查看暂存区被修改的文件 git diff --staged
+
 git commit -m ""
-git push
+git commit -a -m "add 3 files"		省去add提交，但是不会提交新建文件
+
+git rm file1		删除文件，并且已经add到暂存区，commit之后就会删除
+
+git remote add origin https://github.com/urname/shiyanlou.git 		为init的本地仓库添加远程主机
+git push origin master
 
 	1.touch file1 file2 file3		创建3个文件
 	2echo "test" >> file1		使用echo往文件写入，wim 退出：q 不保存
+	3.cat file1			查看文件内容
 
 分支
 
@@ -36,7 +49,19 @@ git branch -b dev 快速创建并切换到dev分支
 git branch		查看所有分支列表
 
 git merge dev		合并dev到当前分支
+git merge -m 'merge experimental branch' experimental		-m是备注信息
+	--ff  --ff--only  快速合并    只快速合并（如果有冲突就失败）
+	--no-ff   非快速合并
+	--squash  将合并过来的分支的所有不同的提交，当做一次提交，提交过来
+	--ff和--no-ff的区别是，当解决完冲突后，no-ff会生成一次commit
+		解决（Resolve）
+		递归（Recursive）
+		章鱼（Octopus）
 
-git merge --abort		撤销分支合并**
+git diff		可以查看合并的冲突内容，也就是没有add的修改
 
-git branch -d dev		删除dev分支
+git merge --abort		撤销分支合并，commit之后就无法使用了
+git reset --hard HEAD^ 	返回合并前master的前一个提交id，觉得没问题可以git checkout id回去
+
+git branch -d dev		删除已经合并过的dev分支
+git branch –D deve		强制删除没有合并的分支

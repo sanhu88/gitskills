@@ -65,3 +65,12 @@ git reset --hard HEAD^ 	返回合并前master的前一个提交id，觉得没问
 
 git branch -d dev		删除已经合并过的dev分支
 git branch –D deve		强制删除没有合并的分支
+
+
+
+
+
+远程仓库
+	github
+
+	ssh -T git@github.com 

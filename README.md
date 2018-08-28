@@ -14,8 +14,17 @@ git config --global <配置名称> <配置的值>
 	cd gitproject
 
 	新建
+
 	cd project
+
 	git init
+
+	git clone /home/shiyanlou/gitproject myrepo 	克隆后并重命名
+
+	git pull /tmp/myrepo master			
+	git pull命令执行两个操作: 它从远程分支(remote branch)抓取修改git fetch的内容，然后把它合并git merge进当前的分支
+
+	git remote add myrepo /tmp/myrepo		添加远程分支并给出缩写
 
 基本日常操作
 git status		查看状态
@@ -28,7 +37,21 @@ git log --pretty=format:'%h : %s' --topo-order --grap
 
 git add file1 file2 file3		可以提交多个文件
 git diff				查看工作区中没有add提交到暂存区的修改
-git diff --cached		查看暂存区被修改的文件 git diff --staged
+git diff --cached		查看暂存区被修改的文件 git diff --staged ，synonym同义词
+
+
+
+git add *		添加所有文件 git add .
+
+git diff master test		查看连个分支的区别，和前者相比，后者相对变化的
+
+git diff  test			切换到master后可以直接比较两个分支
+
+git diff test file1		比较两个分支中的某一个文件
+
+git diff test --stat 	统计参数
+
+
 
 git commit -m ""
 git commit -a -m "add 3 files"		省去add提交，但是不会提交新建文件
@@ -36,6 +59,7 @@ git commit -a -m "add 3 files"		省去add提交，但是不会提交新建文件
 git rm file1		删除文件，并且已经add到暂存区，commit之后就会删除
 
 git remote add origin https://github.com/urname/shiyanlou.git 		为init的本地仓库添加远程主机
+
 git push origin master
 
 	1.touch file1 file2 file3		创建3个文件

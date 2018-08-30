@@ -26,7 +26,10 @@ git config --global <配置名称> <配置的值>
 
 	git remote add myrepo /tmp/myrepo		添加远程分支并给出缩写
 
-基本日常操作
+
+
+	基本日常操作
+
 git status		查看状态
 git log --oneline --garph		一行 图表查看log
 git log --stat		显示每次提交修改过的文件
@@ -91,10 +94,14 @@ git branch -d dev		删除已经合并过的dev分支
 git branch –D deve		强制删除没有合并的分支
 
 
+标签
 
+git tag stable-1 8c315325		为莫格提交创建轻量级的标签
 
 
 远程仓库
 	github
 
 	ssh -T git@github.com 
+
+	pushd 时候提示Everything up-to-date 可能是还没有commit

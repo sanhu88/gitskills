@@ -13,22 +13,18 @@ git config --global <配置名称> <配置的值>
 	git clone https://github.com/shiyanlou/gitproject
 	cd gitproject
 
-	新建
+新建
+cd project
+git init
 
-	cd project
-
-	git init
-
-	git clone /home/shiyanlou/gitproject myrepo 	克隆后并重命名
-
-	git pull /tmp/myrepo master			
-	git pull命令执行两个操作: 它从远程分支(remote branch)抓取修改git fetch的内容，然后把它合并git merge进当前的分支
-
-	git remote add myrepo /tmp/myrepo		添加远程分支并给出缩写
+git clone /home/shiyanlou/gitproject myrepo 	克隆后并重命名
+git pull /tmp/myrepo master			
+git pull命令执行两个操作: 它从远程分支(remote branch)抓取修改git fetch的内容，然后把它合并git merge进当前的分支
+git remote add myrepo /tmp/myrepo		添加远程分支并给出缩写
 
 
 
-	基本日常操作
+基本日常操作
 
 git status		查看状态
 git log --oneline --garph		一行 图表查看log
@@ -61,9 +57,9 @@ git remote add origin https://github.com/urname/shiyanlou.git 		为init的本地
 
 git push origin master
 
-	1.touch file1 file2 file3		创建3个文件
-	2echo "test" >> file1		使用echo往文件写入，wim 退出：q 不保存
-	3.cat file1			查看文件内容
+1.touch file1 file2 file3		创建3个文件
+2.echo "test" >> file1		使用echo往文件写入，wim 退出：q 不保存
+3.cat file1			查看文件内容
 
 分支
 
@@ -97,7 +93,5 @@ git tag stable-1 8c315325		为莫格提交创建轻量级的标签
 
 远程仓库
 	github
-
-	ssh -T git@github.com 
-
+	ssh -T git@github.com
 	pushd 时候提示Everything up-to-date 可能是还没有commit

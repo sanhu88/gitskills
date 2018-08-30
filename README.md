@@ -1,7 +1,7 @@
 # gitskills
 
 
-## 初始设置
+##      初始设置
 	git config --global user.name "Joe Smith"
 	git config --global user.email "name@mail.com"
 	git config --global <配置名称> <配置的值>

@@ -45,13 +45,9 @@ git diff --cached		查看暂存区被修改的文件 git diff --staged ，synony
 
 
 git add *		添加所有文件 git add .
-
 git diff master test		查看连个分支的区别，和前者相比，后者相对变化的
-
 git diff  test			切换到master后可以直接比较两个分支
-
 git diff test file1		比较两个分支中的某一个文件
-
 git diff test --stat 	统计参数
 
 

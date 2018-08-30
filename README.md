@@ -1,12 +1,12 @@
 # gitskills
 
-Creating a new branch is quick and simple.
 
-初始设置
-git config --global user.name "Joe Smith"
-git config --global user.email "name@mail.com"
-git config --global <配置名称> <配置的值>
-
+##初始设置
+	git config --global user.name "Joe Smith"
+	git config --global user.email "name@mail.com"
+	git config --global <配置名称> <配置的值>
+	git config --global core.autocrlf false  windows中的换行符为 CRLF， 而在linux下的换行符为LF
+<br>
 
 成立仓库（克隆或者新建）
 	克隆

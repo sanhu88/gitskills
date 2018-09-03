@@ -64,7 +64,10 @@
 	ssh -T git@github.com
 	pushd 时候提示Everything up-to-date 可能是还没有commit
 
-
+	git pull origin 分支名称 	拉取远程到本地
+	git pull <远程库名> <远程分支名>:<本地分支名>
+	git pull origin		建立了关系后，可以省略
+	
 ##     分支
 
 	git branch -b dev 快速创建并切换到dev分支

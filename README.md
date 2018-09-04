@@ -75,7 +75,7 @@
 	git pull 命令等同于先做了git fetch ，再做了git merge
 	<br>
 
-
+<br>
 	fatal: remote origin already exists
 	1.git remote rm origin 		删除远程仓库绑定
 	2.git remote add origin git@github.com:sanhu88/gitskills.git 	重新绑定

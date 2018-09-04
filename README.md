@@ -73,6 +73,15 @@
 	git pull <远程库名> <远程分支名>:<本地分支名>
 	git pull origin		建立了关系后，可以省略
 	git pull 命令等同于先做了git fetch ，再做了git merge
+	<br>
+
+
+	fatal: remote origin already exists
+	1.git remote rm origin 		删除远程仓库绑定
+	2.git remote add origin git@github.com:sanhu88/gitskills.git 	重新绑定
+	3.git push -u origin master 	再次提交
+
+
 	
 ##     分支
 

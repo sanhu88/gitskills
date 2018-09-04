@@ -38,7 +38,7 @@
 	3.cat file1			查看文件内容
 	git add file1 file2 file3		可以提交多个文件
 	git diff				查看工作区中没有add提交到暂存区的修改
-	git diff --cached		查看暂存区被修改的文件 git diff --staged ，synonym同义词
+	
 
 
 <br>
@@ -48,6 +48,11 @@
 	git diff  test			切换到master后可以直接比较两个分支
 	git diff test file1		比较两个分支中的某一个文件
 	git diff test --stat 	统计参数
+
+	
+	git diff commit_id_1 commit_id_2  	用来比较2个commit之间区别，以前面的id视角比较后面的id
+	git diff --staged   	暂存与仓库的差异【add之后，commit之前】
+	git diff --cached		查看暂存区被修改的文件 git diff --staged ，synonym同义词
 <br>
 
 	git commit -m ""
@@ -67,6 +72,7 @@
 	git pull origin 分支名称 	拉取远程到本地
 	git pull <远程库名> <远程分支名>:<本地分支名>
 	git pull origin		建立了关系后，可以省略
+	git pull 命令等同于先做了git fetch ，再做了git merge
 	
 ##     分支
 
@@ -86,6 +92,7 @@
 
 	git diff		可以查看合并的冲突内容，也就是没有add的修改
 
+
 	git merge --abort		撤销分支合并，commit之后就无法使用了
 	git reset --hard HEAD^ 	返回合并前master的前一个提交id，觉得没问题可以git checkout id回去
 
@@ -97,5 +104,19 @@
 
 	git tag stable-1 8c315325		为某个id提交创建轻量级的标签
 
+##     撤销
+		1.撤销本地修改 没有add 更没有commit的
+		git checkout -- filepathname
 
-	
+		2.已经add 还没commit
+		git diff --cached		先检查看下add了什么
+		git reset HEAD readme.md
+		git checkout --readme.md 	也就是上面第一步
+
+		3.已经用 git commit  提交了代码
+		git reset --hard HEAD^ <file>		最近一次的旧版本
+		git reset --hard  commitid 		返回特定的id版本
+
+		4.查看log
+		git log
+		git reflog		包含跳到老版本之前的commit id ，还可以看到之前id

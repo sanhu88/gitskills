@@ -117,15 +117,32 @@
 		1.撤销本地修改 没有add 更没有commit的
 		git checkout -- filepathname
 
+
 		2.已经add 还没commit
+		git reset --hard HEAD^
 		git diff --cached		先检查看下add了什么
 		git reset HEAD readme.md
 		git checkout --readme.md 	也就是上面第一步
 
 		3.已经用 git commit  提交了代码
-		git reset --hard HEAD^ <file>		最近一次的旧版本
+		git reset --hard HEAD <file>		最近一次的旧版本
+		git revert HEAD^ 				撤销上上次的修改
 		git reset --hard  commitid 		返回特定的id版本
 
 		4.查看log
 		git log
 		git reflog		包含跳到老版本之前的commit id ，还可以看到之前id
+
+## 		忽略
+		使用.gitignore来实现
+
+## 		储藏
+		git stash save "work in progress for foo feature" 	保存一个储藏
+		git stash apply		调用储藏
+		git stash list		储藏列表
+		git stash apply stash@{1} 		恢复到某一个储藏
+		git stash clear		清空储藏列表
+
+## 		维护
+		git gc 	压缩仓库
+		git fsck	一致性检查

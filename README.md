@@ -135,6 +135,19 @@
 
 ## 		忽略
 		使用.gitignore来实现
+		# Windows:
+			Thumbs.db
+			ehthumbs.db
+			Desktop.ini
+		# Python:
+			*.py[cod]
+			*.so
+			*.egg
+			*.egg-info
+			dist
+			build
+		Use -f if you really want to add them. 	使用-f强制add和commit
+		可以对.gitignore做版本管理
 
 ## 		储藏
 		git stash save "work in progress for foo feature" 	保存一个储藏

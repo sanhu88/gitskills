@@ -48,6 +48,7 @@
 	git diff  test			切换到master后可以直接比较两个分支
 	git diff test file1		比较两个分支中的某一个文件
 	git diff test --stat 	统计参数
+	git diff HEAD 			已缓存的与未缓存的所有改动
 
 	
 	git diff commit_id_1 commit_id_2  	用来比较2个commit之间区别，以前面的id视角比较后面的id
@@ -59,6 +60,8 @@
 	git commit -a -m "add 3 files"		省去add提交，但是不会提交新建文件
 
 	git rm file1		删除文件，并且已经add到暂存区，commit之后就会删除
+	git rm -f <file> 	删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f
+	git rm --cached <file> 	从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 --cached 选项
 
 ##     远程程仓库
 
@@ -110,8 +113,10 @@
 
 
 ##     标签
-
+	tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起
 	git tag stable-1 8c315325		为某个id提交创建轻量级的标签
+	git tag -a v1.0 				给最新一次提交打上（HEAD）"v1.0"的标签
+	git tag -d v1.1 				删除标签
 
 ##     撤销
 		1.撤销本地修改 没有add 更没有commit的

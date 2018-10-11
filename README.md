@@ -141,12 +141,17 @@
 ## 		忽略
 		使用.gitignore来实现
 		官网推荐 https://github.com/github/gitignore
+			比如magento的https://github.com/github/gitignore/blob/master/Magento.gitignore
+		! 感叹号 不排除，跟踪 比如：
+			/media/*
+			!/media/.htaccess
+			上面表示除了media下的.htaccess都排除
 		# Windows:
 			Thumbs.db
 			ehthumbs.db
 			Desktop.ini
 		# Python:
-			*.py[cod]
+			*.py[cod] --[cod]匹配区间，即pyc pyo pyd 都排除
 			*.so
 			*.egg
 			*.egg-info

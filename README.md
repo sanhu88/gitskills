@@ -140,6 +140,7 @@
 
 ## 		忽略
 		使用.gitignore来实现
+		官网推荐 https://github.com/github/gitignore
 		# Windows:
 			Thumbs.db
 			ehthumbs.db

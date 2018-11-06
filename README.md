@@ -49,6 +49,7 @@
 	git diff test file1		比较两个分支中的某一个文件
 	git diff test --stat 	统计参数
 	git diff HEAD 			已缓存的与未缓存的所有改动
+	git diff HEAD^ HEAD	
 
 	
 	git diff commit_id_1 commit_id_2  	用来比较2个commit之间区别，以前面的id视角比较后面的id

@@ -141,6 +141,8 @@
 
 ## 		忽略
 		使用.gitignore来实现
+		windows 必须键入文件名 的解决办法： .gitignore. 
+				or 按住shift 邮件CMD下 echo test > .gitignore
 		官网推荐 https://github.com/github/gitignore
 			比如magento的https://github.com/github/gitignore/blob/master/Magento.gitignore
 		! 感叹号 不排除，跟踪 比如：

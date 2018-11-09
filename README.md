@@ -56,6 +56,7 @@
 	git diff commit_id_1 commit_id_2  	用来比较2个commit之间区别，以前面的id视角比较后面的id
 	git diff --staged   	暂存与仓库的差异【add之后，commit之前】
 	git diff --cached		查看暂存区被修改的文件 git diff --staged ，synonym同义词
+	说明：文件一旦暂存，通过git diff命令就不能查询差异，必须添加--staged参数，或--cached参数。
 <br>
 
 	git commit -m ""
@@ -64,11 +65,13 @@
 	git rm file1		删除文件，并且已经add到暂存区，commit之后就会删除
 	git rm -f <file> 	删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f
 	git rm --cached <file> 	从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 --cached 选项
+	git checkout --TestGit.txt 既可以对未添加到暂存区的修改操作进行恢复，也可以对已删除的文件进行恢复
 
 ##     远程程仓库
 
 	git remote add origin https://github.com/urname/shiyanlou.git 		为init的本地仓库添加远程主机
 	git push origin master
+	git push -u origin master	-u 参数的添加可以让本地仓库和远程仓库进行绑定
 	
 	github
 	ssh -T git@github.com
@@ -125,20 +128,21 @@
 		git checkout -- filepathname
 
 
-		2.已经add 还没commit
+		2.撤销已暂存的，已经add 还没commit
 		git reset --hard HEAD^
 		git diff --cached		先检查看下add了什么
 		git reset HEAD readme.md
 		git checkout --readme.md 	也就是上面第一步
 
-		3.已经用 git commit  提交了代码
-		git reset --hard HEAD <file>		最近一次的旧版本
+		3.撤销已提交的，已经用 git commit  提交了代码
+		git reset --hard HEAD <file>		最近一次的旧版本 to unstage
 		git revert HEAD^ 				撤销上上次的修改
 		git reset --hard  commitid 		返回特定的id版本
 
 		4.查看log
 		git log
 		git reflog		包含跳到老版本之前的commit id ，还可以看到之前id
+		git reflog 可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）
 
 ## 		忽略
 		使用.gitignore来实现

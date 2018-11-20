@@ -181,3 +181,21 @@
 
 ## 		gitlab
 		https://about.gitlab.com/product/
+
+## 		遇到的问题
+# 		HEAD游离
+		$ git status
+		HEAD detached from 6de112c
+		nothing to commit, working tree clean
+		 
+		怎么push都不成功，搜索得到的结果是游离了，提交到一个匿名的branch了
+		1.git branch -v  	【看下游离状态的commit id】
+		2.git branch temp 最新的commit号		【把游离状态的commit 保存成temp分支】
+		3.git checkout master		【切换回游离前的branch，一般是master，如果不在master自己确定】
+		4.git merge temp		【合并temp包当前分支，如果有冲突记得处理，按理说不会】
+		5.git branch -D temp		【删除temp分支，因为已经合并到master了】
+		6.git push origin master 	【再push就没问题了】
+		问题的原因可能是我再准备撤销工作区修改中用错了命令 git checkout
+
+
+

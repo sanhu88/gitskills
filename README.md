@@ -126,6 +126,7 @@
 ##     撤销
 		1.撤销本地修改 没有add 更没有commit的
 		git checkout -- filepathname
+		git checkout .  撤销本地所有变动
 
 
 		2.撤销已暂存的，已经add 还没commit

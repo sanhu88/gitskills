@@ -67,7 +67,7 @@
 	git rm --cached <file> 	从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 --cached 选项
 	git checkout --TestGit.txt 既可以对未添加到暂存区的修改操作进行恢复，也可以对已删除的文件进行恢复
 
-##     远程程仓库
+##     远程仓库
 
 	git remote add origin https://github.com/urname/shiyanlou.git 		为init的本地仓库添加远程主机
 	git push origin master

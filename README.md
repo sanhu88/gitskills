@@ -9,6 +9,9 @@
 	git config --list	查看配置
 <br>
 
+##	SSH密钥
+	ssh-keygen -t rsa -C "name@mail.com"
+	
 ##      成立仓库（克隆或者新建）
 	克隆
 	git clone https://github.com/shiyanlou/gitproject

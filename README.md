@@ -39,7 +39,7 @@
 	3.cat file1			查看文件内容
 	git add file1 file2 file3		可以提交多个文件
 	git diff				查看工作区中没有add提交到暂存区的修改
-	
+
 
 
 <br>
@@ -52,7 +52,8 @@
 	git diff HEAD 			已缓存的与未缓存的所有改动
 	git diff HEAD^ HEAD	
 
-	
+
+​	
 	git diff commit_id_1 commit_id_2  	用来比较2个commit之间区别，以前面的id视角比较后面的id
 	git diff --staged   	暂存与仓库的差异【add之后，commit之前】
 	git diff --cached		查看暂存区被修改的文件 git diff --staged ，synonym同义词
@@ -61,7 +62,7 @@
 
 	git commit -m ""
 	git commit -a -m "add 3 files"		省去add提交，但是不会提交新建文件
-
+	
 	git rm file1		删除文件，并且已经add到暂存区，commit之后就会删除
 	git rm -f <file> 	删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f
 	git rm --cached <file> 	从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 --cached 选项
@@ -76,7 +77,7 @@
 	github
 	ssh -T git@github.com
 	pushd 时候提示Everything up-to-date 可能是还没有commit
-
+	
 	git pull origin 分支名称 	拉取远程到本地
 	git pull <远程库名> <远程分支名>:<本地分支名>
 	git pull origin		建立了关系后，可以省略
@@ -90,7 +91,7 @@
 	3.git push -u origin master 	再次提交
 
 
-	
+​	
 ##     分支
 
 	git branch -b dev 快速创建并切换到dev分支
@@ -106,13 +107,13 @@
 		解决（Resolve）
 		递归（Recursive）
 		章鱼（Octopus）
-
+	
 	git diff		可以查看合并的冲突内容，也就是没有add的修改
 
 
 	git merge --abort		撤销分支合并，commit之后就无法使用了
 	git reset --hard HEAD^ 	返回合并前master的前一个提交id，觉得没问题可以git checkout id回去
-
+	
 	git branch -d dev		删除已经合并过的dev分支
 	git branch –D deve		强制删除没有合并的分支
 
@@ -133,12 +134,12 @@
 		git diff --cached		先检查看下add了什么
 		git reset HEAD readme.md
 		git checkout --readme.md 	也就是上面第一步
-
+	
 		3.撤销已提交的，已经用 git commit  提交了代码
 		git reset --hard HEAD <file>		最近一次的旧版本 to unstage
 		git revert HEAD^ 				撤销上上次的修改
 		git reset --hard  commitid 		返回特定的id版本
-
+	
 		4.查看log
 		git log
 		git reflog		包含跳到老版本之前的commit id ，还可以看到之前id
@@ -198,4 +199,47 @@
 		问题的原因可能是我再准备撤销工作区修改中用错了命令 git checkout
 
 
+
+### 远程和本地不同问题
+
+>比如，再网页上直接修改了一些东西，没有及时拉取到本地。本地又修改了东西，没有提交。
+
+主要用到的是cherry（当然可以使用diff）和merge
+
+第一步，查看具体不同
+
+~~~
+git remote -v  #先查看下远程地址信息
+git fetch origin
+git cherry master origin/master
+
+vice versa（V.V.）
+git cherry origin/master master
+~~~
+
+第二步，合并。较推荐的合并方式，处理远程和本地的不同状况
+
+~~~
+git fetch origin master:temp	#拉取远程到本地的一个临时分支
+~~~
+
+~~~
+ git branch	#查看当前分支
+~~~
+
+~~~
+git merge temp	#处理合并
+~~~
+
+~~~
+git push origin master	#push合并后的到远程，可能存在需要登陆的状况
+~~~
+
+~~~
+git branch -d temp	#删除远程分支
+~~~
+
+~~~
+git branch	#再次检查分支
+~~~
 

@@ -9,6 +9,9 @@
 	git config --list	查看配置
 <br>
 
+##	SSH密钥
+	ssh-keygen -t rsa -C "name@mail.com"
+	
 ##      成立仓库（克隆或者新建）
 	克隆
 	git clone https://github.com/shiyanlou/gitproject
@@ -68,7 +71,7 @@
 	git rm --cached <file> 	从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 --cached 选项
 	git checkout --TestGit.txt 既可以对未添加到暂存区的修改操作进行恢复，也可以对已删除的文件进行恢复
 
-##     远程程仓库
+##     远程仓库
 
 	git remote add origin https://github.com/urname/shiyanlou.git 		为init的本地仓库添加远程主机
 	git push origin master
@@ -127,6 +130,7 @@
 ##     撤销
 		1.撤销本地修改 没有add 更没有commit的
 		git checkout -- filepathname
+		git checkout .  撤销本地所有变动
 
 
 		2.撤销已暂存的，已经add 还没commit

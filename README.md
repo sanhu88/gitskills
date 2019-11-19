@@ -27,16 +27,18 @@
 	git remote add myrepo /tmp/myrepo		添加远程分支并给出缩写
 
 > 官网给的操作
-…or create a new repository on the command line
+~~~ …or create a new repository on the command line
 echo "# Learn_on_BiliBili" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git remote add origin git@github.com:sanhu88/Learn_on_BiliBili.git
 git push -u origin master
+
 …or push an existing repository from the command line
 git remote add origin git@github.com:sanhu88/Learn_on_BiliBili.git
 git push -u origin master
+
 …or import code from another repository
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 

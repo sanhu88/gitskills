@@ -11,7 +11,7 @@
 
 ##	SSH密钥
 	ssh-keygen -t rsa -C "name@mail.com"
-	
+
 ##      成立仓库（克隆或者新建）
 	克隆
 	git clone https://github.com/shiyanlou/gitproject
@@ -25,6 +25,28 @@
 	git pull /tmp/myrepo master			
 	git pull命令执行两个操作: 它从远程分支(remote branch)抓取修改git fetch的内容，然后把它合并git merge进当前的分支
 	git remote add myrepo /tmp/myrepo		添加远程分支并给出缩写
+
+
+
+官方新建时的给出方法：
+
+~~~
+echo "# Learn_on_BiliBili" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:sanhu88/Learn_on_BiliBili.git
+git push -u origin master
+
+…or push an existing repository from the command line
+git remote add origin git@github.com:sanhu88/Learn_on_BiliBili.git
+git push -u origin master
+
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+~~~
+
+
 
 
 
@@ -55,13 +77,18 @@
 	git diff HEAD 			已缓存的与未缓存的所有改动
 	git diff HEAD^ HEAD	
 
-
 ​	
-	git diff commit_id_1 commit_id_2  	用来比较2个commit之间区别，以前面的id视角比较后面的id
-	git diff --staged   	暂存与仓库的差异【add之后，commit之前】
-	git diff --cached		查看暂存区被修改的文件 git diff --staged ，synonym同义词
-	说明：文件一旦暂存，通过git diff命令就不能查询差异，必须添加--staged参数，或--cached参数。
-<br>
+
+~~~ 
+git diff commit_id_1 commit_id_2  	用来比较2个commit之间区别，以前面的id视角比较后面的id
+git diff --staged   	暂存与仓库的差异【add之后，commit之前】
+git diff --cached		查看暂存区被修改的文件 git diff --staged ，synonym同义词
+说明：文件一旦暂存，通过git diff命令就不能查询差异，必须添加--staged参数，或--cached参数。
+~~~
+
+
+
+
 
 	git commit -m ""
 	git commit -a -m "add 3 files"		省去add提交，但是不会提交新建文件

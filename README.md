@@ -274,3 +274,16 @@ git branch -d temp	#删除远程分支
 git branch	#再次检查分支
 ~~~
 
+
+## bugs
+ue https to clone on PC and git push will show 
+You've successfully authenticated, but GitHub does not provide shell access.
+
+https://stackoverflow.com/questions/26953071/github-authentication-failed-github-does-not-provide-shell-access
+
+Try and redefine the ssh url for remote origin:
+
+git remote set-url origin git@github.com:lut/EvolutionApp.git
+And try again
+by VonC
+
